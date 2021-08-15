@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z0U-mF-m56">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Simple_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simple Notes" translatesAutoresizingMaskIntoConstraints="NO" id="1OE-Bl-EkM">
+                                <rect key="frame" x="0.0" y="234.33333333333337" width="428" height="419"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="419" id="9vf-dj-JDg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HU-1N-NqK">
+                                <rect key="frame" x="0.0" y="653.33333333333337" width="428" height="83.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83.670000000000002" id="ajl-7r-lf4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="60"/>
+                                <color key="textColor" red="0.67174470792448981" green="0.3722832494959184" blue="0.19990105678299325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.94509804249999996" green="0.90196073060000004" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6HU-1N-NqK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="628-CB-GD1"/>
+                            <constraint firstItem="1OE-Bl-EkM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="79" id="G1n-Es-zgx"/>
+                            <constraint firstItem="1OE-Bl-EkM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KvV-ZD-lFm"/>
+                            <constraint firstItem="6HU-1N-NqK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YhT-Zg-0H7"/>
+                            <constraint firstItem="1OE-Bl-EkM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YyE-AK-EXu"/>
+                            <constraint firstItem="6HU-1N-NqK" firstAttribute="top" secondItem="1OE-Bl-EkM" secondAttribute="bottom" id="nxp-JV-0vf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MfO-HJ-O3R">
+                        <barButtonItem key="backBarButtonItem" title=" " id="PJV-Mw-7xG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="simpleNotes" destination="6HU-1N-NqK" id="xXV-Th-B9m"/>
+                        <segue destination="yNk-dx-5ly" kind="show" identifier="addNoteIdentifier" id="gaW-4E-e4V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675.70093457943926" y="-68.682505399568043"/>
+        </scene>
+        <!--Simple Notes-->
+        <scene sceneID="o8t-Ce-2k1">
+            <objects>
+                <tableViewController id="yNk-dx-5ly" customClass="CategoryTableViewController" customModule="Simple_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KqY-bJ-saM">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="NbL-uU-jMz" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NbL-uU-jMz" id="tMm-fv-uMo">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yNk-dx-5ly" id="mRV-bd-Tlr"/>
+                            <outlet property="delegate" destination="yNk-dx-5ly" id="pZU-M5-mlo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Simple Notes" id="Ilz-ly-k66">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="S0R-wH-4c7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aBk-yl-qRg">
+                            <color key="tintColor" red="0.94509804249999996" green="0.90196073060000004" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addNewCategory:" destination="yNk-dx-5ly" id="ADN-Rq-3X6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Rgn-eb-rkm" kind="show" identifier="goToItems" id="7pi-Nu-feW"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2p-ZL-j3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560" y="-69"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="3yA-Nm-Y69">
+            <objects>
+                <tableViewController id="Rgn-eb-rkm" customClass="SimpleNotesTableViewController" customModule="Simple_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dHT-9v-3Pi">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="m9Y-RJ-nl2">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Rgn-eb-rkm" id="pfR-DI-ZbI"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="f81-UX-1Tm" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                <rect key="frame" x="0.0" y="68.333333969116211" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f81-UX-1Tm" id="eZn-9f-jZw">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rgn-eb-rkm" id="tw7-og-t4x"/>
+                            <outlet property="delegate" destination="Rgn-eb-rkm" id="cue-pN-LeQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Items" id="KHH-WL-4uf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YCY-be-HmA">
+                            <color key="tintColor" red="0.94509804249999996" green="0.90196073060000004" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Rgn-eb-rkm" id="Hhs-As-urO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="m9Y-RJ-nl2" id="siI-2q-ZK2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHr-uD-zv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2415" y="-69"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8xY-cX-QjS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQ7-NX-jjT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z0U-mF-m56" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="lg6-Xp-jQh">
+                        <rect key="frame" x="0.0" y="44" width="428" height="111.33333333333334"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.67174470789999996" green="0.37228324950000002" blue="0.1999010568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
+                            <color key="textColor" red="0.94509804249999996" green="0.90196073060000004" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="40"/>
+                            <color key="textColor" red="0.94509804249999996" green="0.90196073060000004" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Zi-dG-5bc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sJf-eL-q5C"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-224.29906542056074" y="-68.682505399568043"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.94509804249999996" green="0.90196073060000004" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <resources>
+        <image name="Simple Notes" width="166.66667175292969" height="166.66667175292969"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
